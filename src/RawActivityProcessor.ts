@@ -1,10 +1,18 @@
 import { ResponseProcessorParams } from "typed-http-client";
-import { assertIsRawActivity } from "./typePredicates";
+import { handleErrorResponse } from "./HandleErrorResponse";
+import {
+  assertIsRawActivity,
+  isActivityRequestErrorResponse,
+} from "./typePredicates";
 import { Activity } from "./types";
 
 export function rawActivityProcessor({
+  response,
   responseBodyAsObject,
 }: ResponseProcessorParams): Activity {
+  if (isActivityRequestErrorResponse(responseBodyAsObject)) {
+    return handleErrorResponse(response, responseBodyAsObject);
+  }
   assertIsRawActivity(responseBodyAsObject);
   const activity: Activity = {
     activity: responseBodyAsObject.activity,

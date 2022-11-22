@@ -1,6 +1,19 @@
 import * as chai from "chai";
+import {
+  NoActivityFoundError,
+  SearchQueryArgumentError,
+  UnrecognizedQueryResponseError,
+} from "./Errors";
 import { rawActivityProcessor } from "./RawActivityProcessor";
-import { Activity, ActivityType } from "./types";
+import {
+  Activity,
+  ActivityRequestErrorResponse,
+  ActivityType,
+  NoActivityFoundErrorResponse,
+  NoActivityFoundErrorResponseMessage,
+  SearchQueryArgumentErrorResponse,
+  SearchQueryArgumentErrorResponseMessage,
+} from "./types";
 
 var expect = chai.expect;
 
@@ -100,6 +113,48 @@ describe("RawActivity Response Processor", function () {
           responseBodyAsObject: rawActivity,
         })
       ).to.throw(TypeError);
+    });
+  });
+  describe("With No Activity Found Error Response", function () {
+    const error: NoActivityFoundErrorResponse = {
+      error: NoActivityFoundErrorResponseMessage,
+    };
+    it("should throw TypeError", function () {
+      expect(() =>
+        rawActivityProcessor({
+          response: {} as Response,
+          responseBodyAsString: "",
+          responseBodyAsObject: error,
+        })
+      ).to.throw(NoActivityFoundError);
+    });
+  });
+  describe("With Search Query Argument Error Response", function () {
+    const error: SearchQueryArgumentErrorResponse = {
+      error: SearchQueryArgumentErrorResponseMessage,
+    };
+    it("should throw TypeError", function () {
+      expect(() =>
+        rawActivityProcessor({
+          response: {} as Response,
+          responseBodyAsString: "",
+          responseBodyAsObject: error,
+        })
+      ).to.throw(SearchQueryArgumentError);
+    });
+  });
+  describe("With Unrecognized Error Response", function () {
+    const error: ActivityRequestErrorResponse = {
+      error: "some error",
+    };
+    it("should throw TypeError", function () {
+      expect(() =>
+        rawActivityProcessor({
+          response: {} as Response,
+          responseBodyAsString: "",
+          responseBodyAsObject: error,
+        })
+      ).to.throw(UnrecognizedQueryResponseError);
     });
   });
 });

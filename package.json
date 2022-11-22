@@ -33,7 +33,7 @@
   "author": "Chris NeJame",
   "license": "MIT",
   "dependencies": {
-    "typed-http-client": "^0.6.1"
+    "typed-http-client": "^0.6.2"
   },
   "devDependencies": {
     "@types/chai": "^4.3.4",
