@@ -61,39 +61,9 @@ describe("Error Response type predicates", function () {
         expect(isActivityRequestErrorResponse({})).to.be.false;
       });
     });
-    describe("Empty String", function () {
-      it("should be false", function () {
-        expect(isActivityRequestErrorResponse("")).to.be.false;
-      });
-    });
-    describe("Invalid String", function () {
-      it("should be false", function () {
-        expect(isActivityRequestErrorResponse("Invalid")).to.be.false;
-      });
-    });
-    describe("Number", function () {
-      it("should be false", function () {
-        expect(isActivityRequestErrorResponse(3)).to.be.false;
-      });
-    });
-    describe("Null", function () {
-      it("should be false", function () {
-        expect(isActivityRequestErrorResponse(null)).to.be.false;
-      });
-    });
-    describe("Boolean", function () {
-      it("should be false", function () {
-        expect(isActivityRequestErrorResponse(true)).to.be.false;
-      });
-    });
     describe("Array", function () {
       it("should be false", function () {
         expect(isActivityRequestErrorResponse([])).to.be.false;
-      });
-    });
-    describe("Undefined", function () {
-      it("should be false", function () {
-        expect(isActivityRequestErrorResponse(undefined)).to.be.false;
       });
     });
   });

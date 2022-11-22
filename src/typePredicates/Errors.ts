@@ -8,7 +8,7 @@ import {
 } from "../types";
 
 export function isActivityRequestErrorResponse(
-  value: unknown
+  value: object
 ): value is ActivityRequestErrorResponse {
   return (
     typeof value === "object" &&

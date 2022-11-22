@@ -315,29 +315,9 @@ describe("RawActivity type assertion", function () {
         expect(() => assertIsRawActivity({})).to.throw(TypeError);
       });
     });
-    describe("Number", function () {
-      it("should throw a type error", function () {
-        expect(() => assertIsRawActivity(3)).to.throw(TypeError);
-      });
-    });
-    describe("Null", function () {
-      it("should throw a type error", function () {
-        expect(() => assertIsRawActivity(null)).to.throw(TypeError);
-      });
-    });
-    describe("Boolean", function () {
-      it("should throw a type error", function () {
-        expect(() => assertIsRawActivity(true)).to.throw(TypeError);
-      });
-    });
     describe("Array", function () {
       it("should throw a type error", function () {
         expect(() => assertIsRawActivity([])).to.throw(TypeError);
-      });
-    });
-    describe("Undefined", function () {
-      it("should throw a type error", function () {
-        expect(() => assertIsRawActivity(undefined)).to.throw(TypeError);
       });
     });
   });

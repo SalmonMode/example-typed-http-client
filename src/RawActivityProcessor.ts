@@ -1,4 +1,4 @@
-import { ResponseProcessorParams } from "typed-http-client";
+import { assertIsObject, ResponseProcessorParams } from "typed-http-client";
 import { handleErrorResponse } from "./HandleErrorResponse";
 import {
   assertIsRawActivity,
@@ -10,6 +10,7 @@ export function rawActivityProcessor({
   response,
   responseBodyAsObject,
 }: ResponseProcessorParams): Activity {
+  assertIsObject(responseBodyAsObject);
   if (isActivityRequestErrorResponse(responseBodyAsObject)) {
     return handleErrorResponse(response, responseBodyAsObject);
   }

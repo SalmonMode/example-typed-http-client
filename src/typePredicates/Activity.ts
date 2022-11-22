@@ -20,11 +20,8 @@ export function isActivityType(value: unknown): value is ActivityType {
   }
 }
 export function assertIsRawActivity(
-  value: unknown
+  value: object
 ): asserts value is RawActivity {
-  if (typeof value !== "object" || value === null) {
-    throw new TypeError(`Value is not RawActivity: ${JSON.stringify(value)}`);
-  }
   // Check to see if it even has the required keys
   if (
     !hasProperty(value, "activity") ||
