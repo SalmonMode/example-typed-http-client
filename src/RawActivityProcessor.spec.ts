@@ -26,7 +26,11 @@ describe("RawActivity Response Processor", function () {
     };
     it("should produce the expected Activity object", function () {
       expect(
-        rawActivityProcessor({ responseBodyAsObject: rawActivity })
+        rawActivityProcessor({
+          response: {} as Response,
+          responseBodyAsString: "",
+          responseBodyAsObject: rawActivity,
+        })
       ).to.deep.equal(expectedActivity);
     });
   });
@@ -50,7 +54,11 @@ describe("RawActivity Response Processor", function () {
     };
     it("should produce the expected Activity object", function () {
       expect(
-        rawActivityProcessor({ responseBodyAsObject: rawActivity })
+        rawActivityProcessor({
+          response: {} as Response,
+          responseBodyAsString: "",
+          responseBodyAsObject: rawActivity,
+        })
       ).to.deep.equal(expectedActivity);
     });
   });
@@ -66,7 +74,11 @@ describe("RawActivity Response Processor", function () {
     };
     it("should throw TypeError", function () {
       expect(() =>
-        rawActivityProcessor({ responseBodyAsObject: rawActivity })
+        rawActivityProcessor({
+          response: {} as Response,
+          responseBodyAsString: "",
+          responseBodyAsObject: rawActivity,
+        })
       ).to.throw(TypeError);
     });
   });
@@ -82,7 +94,11 @@ describe("RawActivity Response Processor", function () {
     };
     it("should throw TypeError", function () {
       expect(() =>
-        rawActivityProcessor({ responseBodyAsObject: rawActivity })
+        rawActivityProcessor({
+          response: {} as Response,
+          responseBodyAsString: "",
+          responseBodyAsObject: rawActivity,
+        })
       ).to.throw(TypeError);
     });
   });

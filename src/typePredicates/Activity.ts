@@ -23,7 +23,7 @@ export function assertIsRawActivity(
   value: unknown
 ): asserts value is RawActivity {
   if (!value) {
-    throw new TypeError("Value is not RawActivity");
+    throw new TypeError(`Value is not RawActivity: ${JSON.stringify(value)}`);
   }
   // Check to see if it even has the required keys
   if (
@@ -35,7 +35,7 @@ export function assertIsRawActivity(
     !hasProperty(value, "key") ||
     !hasProperty(value, "link")
   ) {
-    throw new TypeError("Value is not RawActivity");
+    throw new TypeError(`Value is not RawActivity: ${JSON.stringify(value)}`);
   }
   // Check the type of each key
   if (
@@ -47,6 +47,6 @@ export function assertIsRawActivity(
     !isString(value.key) ||
     !isString(value.link)
   ) {
-    throw new TypeError("Value is not RawActivity");
+    throw new TypeError(`Value is not RawActivity: ${JSON.stringify(value)}`);
   }
 }

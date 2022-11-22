@@ -4,7 +4,7 @@ import { Activity } from "./types";
 
 export function rawActivityProcessor({
   responseBodyAsObject,
-}: Partial<ResponseProcessorParams>): Activity {
+}: ResponseProcessorParams): Activity {
   assertIsRawActivity(responseBodyAsObject);
   const activity: Activity = {
     activity: responseBodyAsObject.activity,

@@ -94,10 +94,24 @@ describe("BoredApiClient", function () {
     it("produces expected activity", function () {
       expect(result).to.deep.equal(expectedActivity);
     });
-    it("Went to the anticipated URL", function () {
+    it("went to the anticipated URL", function () {
       expect(
         new URL(requestUri, "https://www.boredapi.com/api/activity/")
       ).to.deep.equal(anticipatedUrl);
+    });
+  });
+  describe("Actual request", function () {
+    let client: BoredApiClient;
+    before(async function () {
+      client = new BoredApiClient();
+      await client.getRandomActivity();
+    });
+
+    after(function () {
+      nock.cleanAll();
+    });
+    it("should not throw an error", async function () {
+      await expect(client.getRandomActivity()).to.eventually.be.fulfilled;
     });
   });
 });
