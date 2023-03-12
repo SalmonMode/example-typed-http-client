@@ -3,17 +3,16 @@ import {
   NoActivityFoundError,
   SearchQueryArgumentError,
   UnrecognizedQueryResponseError,
-} from "./Errors";
-import { rawActivityProcessor } from "./RawActivityProcessor";
+} from "./Errors.js";
+import { rawActivityProcessor } from "./RawActivityProcessor.js";
 import {
-  Activity,
-  ActivityRequestErrorResponse,
-  ActivityType,
-  NoActivityFoundErrorResponse,
+  type ActivityRequestErrorResponse,
+  type NoActivityFoundErrorResponse,
   NoActivityFoundErrorResponseMessage,
-  SearchQueryArgumentErrorResponse,
+  type SearchQueryArgumentErrorResponse,
   SearchQueryArgumentErrorResponseMessage,
-} from "./types";
+} from "./types/Errors.js";
+import { type Activity, ActivityType } from "./types/Activity.js";
 
 var expect = chai.expect;
 

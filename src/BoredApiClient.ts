@@ -1,6 +1,6 @@
 import { TypedHttpClient } from "typed-http-client";
-import { rawActivityProcessor } from "./RawActivityProcessor";
-import { Activity, ActivitySearchOptions } from "./types";
+import { rawActivityProcessor } from "./RawActivityProcessor.js";
+import type { Activity, ActivitySearchOptions } from "./types/index.js";
 
 export default class BoredApiClient {
   httpClient: TypedHttpClient;

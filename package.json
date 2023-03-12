@@ -1,18 +1,22 @@
 {
   "name": "bored-api-client",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "A TypeScript HTTP client for making requests to the Bored API.",
   "main": "dist/index.js",
+  "type": "module",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "npx tsc",
-    "test": "nyc mocha --recursive ./dist/",
-    "test:ci": "nyc mocha --recursive ./dist/ --reporter mocha-junit-reporter"
+    "test": "c8 mocha ./dist/",
+    "test:ci": "c8 mocha ./dist/ --reporter mocha-junit-reporter"
   },
-  "nyc": {
+  "c8": {
     "extension": [
-      ".ts",
-      ".tsx"
+      ".js",
+      ".jsx"
+    ],
+    "include": [
+      "**/*.{js,jsx,ts,tsx}"
     ],
     "exclude": [
       "**/*.d.ts",
@@ -33,7 +37,8 @@
   "author": "Chris NeJame",
   "license": "MIT",
   "dependencies": {
-    "typed-http-client": "^0.7.1"
+    "primitive-predicates": "^1.1.2",
+    "typed-http-client": "^2.0.1"
   },
   "devDependencies": {
     "@types/chai": "^4.3.4",
@@ -41,6 +46,7 @@
     "@types/mocha": "^10.0.0",
     "@types/node": "^18.11.9",
     "@types/sinon": "^10.0.13",
+    "c8": "^7.13.0",
     "chai": "^4.3.7",
     "chai-as-promised": "^7.1.1",
     "mocha": "^10.1.0",
@@ -51,6 +57,6 @@
     "source-map-support": "^0.5.21",
     "ts-node": "^10.9.1",
     "tslib": "^2.4.1",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.5"
   }
 }

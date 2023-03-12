@@ -1,8 +1,12 @@
 import * as chai from "chai";
-import * as chaiAsPromised from "chai-as-promised";
-import * as nock from "nock";
-import BoredApiClient from "./BoredApiClient";
-import { Activity, ActivityType, RawActivity } from "./types";
+import { default as chaiAsPromised } from "chai-as-promised";
+import { type Body, default as nock } from "nock";
+import BoredApiClient from "./BoredApiClient.js";
+import {
+  type Activity,
+  ActivityType,
+  type RawActivity,
+} from "./types/index.js";
 
 chai.use(chaiAsPromised);
 var expect = chai.expect;
@@ -104,11 +108,6 @@ describe("BoredApiClient", function () {
     let client: BoredApiClient;
     before(async function () {
       client = new BoredApiClient();
-      await client.getRandomActivity();
-    });
-
-    after(function () {
-      nock.cleanAll();
     });
     it("should not throw an error", async function () {
       await expect(client.getRandomActivity()).to.eventually.be.fulfilled;

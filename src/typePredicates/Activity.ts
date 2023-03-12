@@ -1,5 +1,5 @@
-import { hasProperty, isString } from "typed-http-client";
-import { ActivityType, RawActivity } from "../types";
+import { hasProperty, isString } from "primitive-predicates";
+import { ActivityType, type RawActivity } from "../types/Activity.js";
 
 export function assertIsActivityType(
   value: unknown

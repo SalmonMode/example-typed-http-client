@@ -1,3 +1,3 @@
-export { default as BoredApiClient } from "./BoredApiClient";
-export * from "./Errors";
-export * from "./types";
+export { default as BoredApiClient } from "./BoredApiClient.js";
+export * from "./Errors.js";
+export * from "./types/index.js";

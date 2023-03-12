@@ -1,17 +1,17 @@
-import { expect } from "chai";
 import {
-  NoActivityFoundError,
-  SearchQueryArgumentError,
-  UnrecognizedQueryResponseError,
-} from "./Errors";
-import { handleErrorResponse } from "./HandleErrorResponse";
-import {
-  ActivityRequestErrorResponse,
   NoActivityFoundErrorResponse,
   NoActivityFoundErrorResponseMessage,
   SearchQueryArgumentErrorResponse,
   SearchQueryArgumentErrorResponseMessage,
-} from "./types";
+  ActivityRequestErrorResponse,
+} from "./types/Errors.js";
+import {
+  NoActivityFoundError,
+  SearchQueryArgumentError,
+  UnrecognizedQueryResponseError,
+} from "./Errors.js";
+import { handleErrorResponse } from "./HandleErrorResponse.js";
+import { expect } from "chai";
 
 const url = "http://somesite.com";
 

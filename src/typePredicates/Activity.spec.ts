@@ -1,6 +1,6 @@
 import * as chai from "chai";
-import { ActivityType } from "../types";
-import { assertIsRawActivity, isActivityType } from "./Activity";
+import { ActivityType } from "../types/Activity.js";
+import { assertIsRawActivity, isActivityType } from "./Activity.js";
 
 var expect = chai.expect;
 

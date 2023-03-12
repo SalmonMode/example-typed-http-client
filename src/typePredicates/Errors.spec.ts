@@ -1,16 +1,16 @@
-import * as chai from "chai";
-import {
-  ActivityType,
-  NoActivityFoundErrorResponse,
-  NoActivityFoundErrorResponseMessage,
-  SearchQueryArgumentErrorResponse,
-  SearchQueryArgumentErrorResponseMessage,
-} from "../types";
 import {
   isActivityRequestErrorResponse,
   isNoActivityFoundErrorResponse,
   isSearchQueryArgumentErrorResponse,
-} from "./Errors";
+} from "./Errors.js";
+import { ActivityType } from "../types/Activity.js";
+import {
+  NoActivityFoundErrorResponse,
+  NoActivityFoundErrorResponseMessage,
+  SearchQueryArgumentErrorResponse,
+  SearchQueryArgumentErrorResponseMessage,
+} from "../types/Errors.js";
+import * as chai from "chai";
 
 var expect = chai.expect;
 

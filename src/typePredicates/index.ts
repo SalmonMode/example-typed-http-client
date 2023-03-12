@@ -1,2 +1,2 @@
-export * from "./Activity";
-export * from "./Errors";
+export * from "./Activity.js";
+export * from "./Errors.js";

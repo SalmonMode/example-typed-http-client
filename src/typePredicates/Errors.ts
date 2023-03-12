@@ -1,11 +1,11 @@
-import { hasProperty, isString } from "typed-http-client";
+import { hasProperty, isString } from "primitive-predicates";
 import {
-  ActivityRequestErrorResponse,
-  NoActivityFoundErrorResponse,
+  type ActivityRequestErrorResponse,
+  type NoActivityFoundErrorResponse,
   NoActivityFoundErrorResponseMessage,
-  SearchQueryArgumentErrorResponse,
+  type SearchQueryArgumentErrorResponse,
   SearchQueryArgumentErrorResponseMessage,
-} from "../types";
+} from "../types/Errors.js";
 
 export function isActivityRequestErrorResponse(
   value: object

@@ -2,12 +2,12 @@ import {
   NoActivityFoundError,
   SearchQueryArgumentError,
   UnrecognizedQueryResponseError,
-} from "./Errors";
+} from "./Errors.js";
 import {
   isNoActivityFoundErrorResponse,
   isSearchQueryArgumentErrorResponse,
-} from "./typePredicates";
-import { ActivityRequestErrorResponse } from "./types";
+} from "./typePredicates/Errors.js";
+import type { ActivityRequestErrorResponse } from "./types/Errors.js";
 
 export function handleErrorResponse(
   response: Response,
