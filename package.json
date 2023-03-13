@@ -1,12 +1,34 @@
 {
   "name": "bored-api-client",
-  "version": "0.7.1",
+  "version": "1.0.0",
   "description": "A TypeScript HTTP client for making requests to the Bored API.",
-  "main": "dist/index.js",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/esmodule/index.js",
   "type": "module",
-  "types": "dist/index.d.ts",
+  "types": "dist/esmodule/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/commonjs/index.js",
+      "import": "./dist/esmodule/index.js"
+    },
+    "./types": {
+      "require": "./dist/commonjs/types/index.js",
+      "import": "./dist/esmodule/types/index.js"
+    },
+    "./errors": {
+      "require": "./dist/commonjs/Errors.js",
+      "import": "./dist/esmodule/Errors.js"
+    },
+    "./BoredApiClient": {
+      "require": "./dist/commonjs/BoredApiClient.js",
+      "import": "./dist/esmodule/BoredApiClient.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "npx tsc",
+    "build": "rm -fr dist/* && npx tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && ./fixup.sh",
     "test": "c8 mocha ./dist/",
     "test:ci": "c8 mocha ./dist/ --reporter mocha-junit-reporter",
     "lint": "npx eslint .",
@@ -40,7 +62,7 @@
   "license": "MIT",
   "dependencies": {
     "primitive-predicates": "^2.0.2",
-    "typed-http-client": "^2.1.0"
+    "typed-http-client": "^2.2.0"
   },
   "devDependencies": {
     "@types/chai": "^4.3.4",

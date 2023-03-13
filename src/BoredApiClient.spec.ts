@@ -1,7 +1,7 @@
 import * as chai from "chai";
 import { default as chaiAsPromised } from "chai-as-promised";
 import { type Body, default as nock } from "nock";
-import BoredApiClient from "./BoredApiClient.js";
+import BoredApiClient from "./index.js";
 import {
   type Activity,
   ActivityType,
