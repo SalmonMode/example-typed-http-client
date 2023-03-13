@@ -1,9 +1,9 @@
-import type { ResponseProcessorParams } from "typed-http-client";
+import { assertIsObject } from "primitive-predicates/Object";
+import type { ResponseProcessorParams } from "typed-http-client/types/TypedHttpClient";
 import { handleErrorResponse } from "./HandleErrorResponse.js";
 import { assertIsRawActivity } from "./typePredicates/Activity.js";
-import type { Activity } from "./types/Activity.js";
-import { assertIsObject } from "primitive-predicates";
 import { isActivityRequestErrorResponse } from "./typePredicates/Errors.js";
+import type { Activity } from "./types/Activity.js";
 
 export function rawActivityProcessor({
   response,

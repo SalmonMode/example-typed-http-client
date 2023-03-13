@@ -1,10 +1,11 @@
-import { hasProperty, isString } from "primitive-predicates";
+import { hasProperty } from "primitive-predicates/Property";
+import { isString } from "primitive-predicates/String";
 import {
+  NoActivityFoundErrorResponseMessage,
+  SearchQueryArgumentErrorResponseMessage,
   type ActivityRequestErrorResponse,
   type NoActivityFoundErrorResponse,
-  NoActivityFoundErrorResponseMessage,
   type SearchQueryArgumentErrorResponse,
-  SearchQueryArgumentErrorResponseMessage,
 } from "../types/Errors.js";
 
 export function isActivityRequestErrorResponse(

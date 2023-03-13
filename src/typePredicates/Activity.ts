@@ -1,4 +1,5 @@
-import { hasProperty, isString } from "primitive-predicates";
+import { hasProperty } from "primitive-predicates/Property";
+import { isString } from "primitive-predicates/String";
 import { ActivityType, type RawActivity } from "../types/Activity.js";
 
 export function assertIsActivityType(

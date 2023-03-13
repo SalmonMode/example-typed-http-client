@@ -1,4 +1,4 @@
-import { TypedHttpClient } from "typed-http-client";
+import TypedHttpClient from "typed-http-client/TypedHttpClient";
 import { rawActivityProcessor } from "./RawActivityProcessor.js";
 import type { Activity, ActivitySearchOptions } from "./types/index.js";
 
