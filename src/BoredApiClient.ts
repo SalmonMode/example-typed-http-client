@@ -34,7 +34,7 @@ export default class BoredApiClient {
    */
   private _getRequestUrl(searchOptions: ActivitySearchOptions): URL {
     const url = new URL(BoredApiClient._baseUrl);
-    for (let [key, value] of Object.entries(searchOptions)) {
+    for (const [key, value] of Object.entries(searchOptions)) {
       url.searchParams.set(key, value);
     }
     return url;

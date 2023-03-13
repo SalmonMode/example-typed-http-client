@@ -2,7 +2,7 @@ import * as chai from "chai";
 import { ActivityType } from "../types/Activity.js";
 import { assertIsRawActivity, isActivityType } from "./Activity.js";
 
-var expect = chai.expect;
+const expect = chai.expect;
 
 describe("ActivityType type predicate", function () {
   describe("Education", function () {

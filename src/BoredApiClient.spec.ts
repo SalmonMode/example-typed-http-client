@@ -9,7 +9,7 @@ import {
 } from "./types/index.js";
 
 chai.use(chaiAsPromised);
-var expect = chai.expect;
+const expect = chai.expect;
 
 describe("BoredApiClient", function () {
   describe("No Options", function () {
@@ -78,8 +78,9 @@ describe("BoredApiClient", function () {
       price: 0,
     };
     const anticipatedUrl = new URL("https://www.boredapi.com/api/activity/");
-    for (let [key, value] of Object.entries(options)) {
-      anticipatedUrl.searchParams.set(key, value as any);
+    for (const [key, value] of Object.entries(options)) {
+      const valueAsString = value.toString();
+      anticipatedUrl.searchParams.set(key, valueAsString);
     }
     before(async function () {
       client = new BoredApiClient();

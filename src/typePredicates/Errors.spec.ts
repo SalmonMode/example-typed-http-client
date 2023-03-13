@@ -12,7 +12,7 @@ import {
 } from "../types/Errors.js";
 import * as chai from "chai";
 
-var expect = chai.expect;
+const expect = chai.expect;
 
 const noActivityFoundError: NoActivityFoundErrorResponse = {
   error: NoActivityFoundErrorResponseMessage,
