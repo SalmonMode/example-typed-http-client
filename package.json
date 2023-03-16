@@ -1,6 +1,6 @@
 {
   "name": "bored-api-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A TypeScript HTTP client for making requests to the Bored API.",
   "main": "dist/commonjs/index.js",
   "module": "dist/esmodule/index.js",
@@ -62,7 +62,7 @@
   "license": "MIT",
   "dependencies": {
     "primitive-predicates": "^2.0.2",
-    "typed-http-client": "^2.2.0"
+    "typed-http-client": "^2.2.1"
   },
   "devDependencies": {
     "@types/chai": "^4.3.4",
